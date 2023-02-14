@@ -1,0 +1,37 @@
+.about-us.item-wrap {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 24px;
+	grid-row-gap: 0px;
+	margin: 0 2.5rem;
+	p {
+		grid-area: 1 / 1 / 2 / 2;
+		font-family: Smiley Sans;
+		font-size: var(--step-10);
+		line-height: 150%;
+		letter-spacing: -0.011em;
+		color: var(--text-dark);
+		font-weight: 500;
+	}
+	.content {
+		grid-area: 1 / 5 / 2 / 13;
+		.subtitle {
+			font-family: unset;
+			font-weight: 500;
+			font-size: var(--step-1);
+			line-height: 150%;
+			letter-spacing: -0.011em;
+			color: var(--text-gray);
+		}
+		.body {
+			p {
+				font-family: unset;
+				font-style: normal;
+				font-size: var(--step-6);
+				line-height: 140%;
+				margin-bottom: 0.5em;
+			}
+		}
+	}
+}

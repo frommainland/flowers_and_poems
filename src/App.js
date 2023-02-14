@@ -1,10 +1,13 @@
-// import logo from './logo.svg';
-// import './App.css';
+import "the-new-css-reset/css/reset.css"
+import './rootCSS.scss'
+import './font.css'
 
+
+import AboutPage from "./aboutPage/AboutPage";
 function App() {
     return (
         <div className="App">
-            <h1>chinese flowers and poems</h1>
+            <AboutPage />
         </div>
     );
 }
