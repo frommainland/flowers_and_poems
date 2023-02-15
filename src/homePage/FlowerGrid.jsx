@@ -27,17 +27,17 @@ const FlowerGrid = () => {
 				</div>
 			</div>
 			<div className="mask">
-				<div className="scaled">
+				<div className="scaled" style={{ backgroundImage: `url(${flower12})` }}>
 					{/* <img src={flower12} alt="flower" /> */}
 				</div>
 			</div>
 			<div className="mask">
-				<div className="scaled">
+				<div className="scaled" style={{ backgroundImage: `url(${flower13})` }}>
 					{/* <img src={flower13} alt="flower" /> */}
 				</div>
 			</div>
 			<div className="mask">
-				<div className="scaled">
+				<div className="scaled" style={{ backgroundImage: `url(${flower14})` }}>
 					{/* <img src={flower14} alt="flower" /> */}
 				</div>
 			</div>
