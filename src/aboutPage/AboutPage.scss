@@ -25,7 +25,9 @@
 			margin-bottom: 3rem;
 			.multi-group {
 				display: flex;
-				justify-content: space-between;
+				// justify-content: space-between;
+				justify-content: flex-start;
+				gap: 4em;
 			}
 			.subtitle {
 				font-family: unset;
@@ -33,7 +35,7 @@
 				font-size: var(--step-1);
 				line-height: 150%;
 				letter-spacing: -0.011em;
-				color: var(--text-gray);
+				color: var(--text-dark);
 				margin-top: 3rem;
 				margin-bottom: 0.375rem;
 			}

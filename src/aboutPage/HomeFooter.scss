@@ -1,0 +1,30 @@
+.homefooter.wrap {
+	background-color: white;
+	background: linear-gradient(180deg, #ffffff 0%, var(--color-green) 100%);
+	border-radius: 8px;
+	position: relative;
+	padding-left: 2.5rem;
+	padding-top: 2rem;
+
+	p {
+		color: var(--text-dark);
+		font-family: var(--font);
+		letter-spacing: -0.1em;
+		margin-bottom: -0.15em;
+	}
+	.the-end {
+		display: flex;
+		position: absolute;
+		bottom: 0;
+		padding-bottom: 2em;
+		gap: 3rem;
+		p {
+			font-family: unset;
+			font-size: var(--step-6);
+			line-height: 140%;
+			font-weight: 600;
+			color: var(--text-dark);
+			letter-spacing: unset;
+		}
+	}
+}

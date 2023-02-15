@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from './Nav'
 import './AboutPage.scss'
 import { motion } from 'framer-motion'
+import HomeFooter from './HomeFooter'
 
 const MyLink = ({ href, text }) => {
 	return (
@@ -59,10 +60,10 @@ const AboutPage = () => {
 						</p>
 					</div>
 
-					<p className="subtitle">诗词</p>
+					{/* <p className="subtitle">诗词</p>
 					<div className="body">
 						<p>杜甫，苏轼，礼拜，白居易，屈原，陆游，李贺</p>
-					</div>
+					</div> */}
 
 					<div className="multi-group">
 						<div className="multi-group-item">
@@ -123,6 +124,7 @@ const AboutPage = () => {
 					</div>
 				</div>
 			</div>
+			<HomeFooter />
 		</div>
 	)
 }
