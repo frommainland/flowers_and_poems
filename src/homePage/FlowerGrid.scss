@@ -1,0 +1,22 @@
+.home.flower-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+	.mask {
+		overflow: hidden;
+		aspect-ratio: 1 / 1;
+		position: relative;
+		.scaled {
+			position: absolute;
+			width: 600px;
+			aspect-ratio: 720 / 1024;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-size: cover;
+			// img {
+			// 	width: 120%;
+			// }
+		}
+	}
+}
