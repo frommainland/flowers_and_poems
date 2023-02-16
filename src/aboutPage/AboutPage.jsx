@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Nav from './Nav'
 import './AboutPage.scss'
 import { motion } from 'framer-motion'
@@ -13,12 +13,17 @@ const MyLink = ({ href, text }) => {
 }
 
 const AboutPage = () => {
+	const [data, setData] = useState(false)
+	const handleData = (newData) => {
+		setData(newData)
+	}
 	return (
 		<div className="about-us-wrap">
-			<Nav></Nav>
+			<Nav data={data}></Nav>
+			<div className="gradient"></div>
 			{/* content 01 */}
 			<div className="about-us item-wrap">
-				<p>01</p>
+				{/* <p>01</p> */}
 				<div className="content">
 					<p className="subtitle">想法</p>
 					<div className="body">
@@ -41,7 +46,7 @@ const AboutPage = () => {
 			</div>
 			{/* content 02 */}
 			<div className="about-us item-wrap">
-				<p>02</p>
+				{/* <p>02</p> */}
 				<div className="content">
 					<p className="subtitle">插画</p>
 					<div className="body">
@@ -106,7 +111,7 @@ const AboutPage = () => {
 
 			{/* content 03 */}
 			<div className="about-us item-wrap">
-				<p>03</p>
+				{/* <p>03</p> */}
 				<div className="content">
 					<p className="subtitle">相关项目</p>
 					<div className="body">
@@ -124,7 +129,7 @@ const AboutPage = () => {
 					</div>
 				</div>
 			</div>
-			<HomeFooter />
+			<HomeFooter handleData={handleData} />
 		</div>
 	)
 }

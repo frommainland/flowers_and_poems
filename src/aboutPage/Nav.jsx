@@ -1,12 +1,13 @@
 import './Nav.scss'
+import { motion } from 'framer-motion'
 
-const Nav = () => {
+const Nav = ({ data }) => {
 	return (
-		<div className='nav'>
-			<div className="logo">
+		<div className="nav">
+			<motion.div className="logo" animate={{ opacity: data ? 0 : 1 }}>
 				<p>花与诗</p>
 				<p>画和人</p>
-			</div>
+			</motion.div>
 			<div className="about-us">
 				<p>
 					<span>

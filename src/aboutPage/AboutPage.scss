@@ -1,5 +1,16 @@
 .about-us-wrap {
 	background-color: var(--text-dark);
+	position: relative;
+	.gradient {
+		height: 140px;
+		background: linear-gradient(
+			180deg,
+			var(--color-green) 0%,
+			#ffffff 100%
+		);
+		border-radius: 8px;
+		margin-bottom: 2px;
+	}
 	.about-us.item-wrap {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
@@ -9,7 +20,7 @@
 		padding: 0 2.5rem;
 		border-radius: 8px;
 		background-color: white;
-		margin-bottom: 4px;
+		margin-bottom: 2px;
 		p {
 			grid-area: 1 / 1 / 2 / 2;
 			font-family: Smiley Sans;
@@ -56,3 +67,21 @@
 		}
 	}
 }
+
+/* Rectangle 24 */
+
+// position: absolute;
+// width: 1100px;
+// height: 140px;
+
+// background: linear-gradient(180deg, #CDEFAB 0%, #FFFFFF 100%);
+// border-radius: 8px;
+
+/* Rectangle 24 */
+
+// position: absolute;
+// width: 1100px;
+// height: 340px;
+
+// background: linear-gradient(180deg, #CDEFAB 0%, #FFFFFF 50%);
+// border-radius: 8px;

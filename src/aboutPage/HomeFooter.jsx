@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import './HomeFooter.scss'
 import useWindowSize from '../helper/hooks/useWindowSize'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 
 const MyLink = ({ href, text }) => {
 	return (
@@ -11,14 +11,22 @@ const MyLink = ({ href, text }) => {
 	)
 }
 
-const HomeFooter = () => {
+const HomeFooter = ({ handleData }) => {
 	const size = useWindowSize()
+	const ref = useRef(null)
+	const isInView = useInView(ref, { margin: '-40%' })
+
+	useEffect(() => {
+		handleData(isInView)
+	}, [isInView])
+
 	return (
 		<div
 			className="homefooter wrap"
 			style={{
 				minHeight: size.height,
 			}}
+			ref={ref}
 		>
 			<p style={{ fontSize: `calc(${size.width}*.45/3/4*5px)` }}>
 				花与诗
@@ -30,7 +38,7 @@ const HomeFooter = () => {
 				<p>二零二三 ◉ 二月</p>
 				<p>
 					<MyLink
-						href="https://oddityfragrance.com/"
+						href="https://frommainland.netlify.app/"
 						text="所有项目存档↗"
 					/>
 				</p>
