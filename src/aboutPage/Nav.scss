@@ -19,7 +19,7 @@
 	}
 
 	.about-us {
-		p {
+		div {
 			font-weight: 600;
 			font-size: var(--step-6);
 			line-height: 138%;
@@ -27,11 +27,15 @@
 			color: var(--text-dark);
 			display: flex;
 			align-items: center;
+            cursor: pointer;
 			span {
 				margin-right: 0.375em;
 				justify-content: center;
 				display: inline-flex;
 			}
+            .text {
+                margin-right: 0;
+            }
 		}
 	}
 }

@@ -1,33 +1,59 @@
 import './Nav.scss'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 const Nav = ({ data }) => {
 	const aboutText = '关于网站'
 	const about = aboutText.split('')
 
+	const [hover, setHover] = useState(false)
+	const skwewDegBefore = 0
+	const moveXBefore = 0
+
+	const skewDegAfter = -12
+	const moveXAfter = 3
+
 	const container = {
-		hidden: { opacity: 0 },
-		show: {
-			opacity: 1,
+		hidden: {
+			skewX: skwewDegBefore,
+			x: moveXBefore,
 			transition: {
-				staggerChildren: 0.5,
+				staggerChildren: 0.07,
+				staggerDirection: -1,
+				ease: [0.4, 0, 0, 1],
+				duration: 1,
+			},
+		},
+		show: {
+			skewX: skewDegAfter,
+			x: moveXAfter,
+			transition: {
+				staggerChildren: 0.07,
+				ease: [0.4, 0, 0, 1],
+				duration: 1,
 			},
 		},
 	}
 
-	const item = {
-		hidden: { opacity: 0 },
-		show: { opacity: 1 },
+	const items = {
+		hidden: { skewX: skwewDegBefore, x: moveXBefore },
+		show: { skewX: skewDegAfter, x: moveXAfter },
 	}
 
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		})
+	}
 	return (
 		<div className="nav">
 			<motion.div className="logo" animate={{ opacity: data ? 0 : 1 }}>
 				<p>花与诗</p>
 				<p>画和人</p>
 			</motion.div>
-			<div className="about-us">
-				<p>
+			<div className="about-us" onClick={scrollToTop}>
+				<div>
 					<span>
 						<svg
 							width="24"
@@ -47,23 +73,23 @@ const Nav = ({ data }) => {
 					<motion.p
 						variants={container}
 						initial="hidden"
-						whileHover="show"
+						animate={hover ? 'show' : 'hidden'}
+						onHoverStart={() => setHover(true)}
+						onHoverEnd={() => setHover(false)}
 					>
 						{about.map((item, index) => {
 							return (
 								<motion.span
 									key={index}
-									variants={item}
-									// whileHover={{ scale: 1.1 }}
+									variants={items}
+									className="text"
 								>
 									{item}
 								</motion.span>
 							)
 						})}
 					</motion.p>
-
-					{/* 关于网站 */}
-				</p>
+				</div>
 			</div>
 		</div>
 	)
