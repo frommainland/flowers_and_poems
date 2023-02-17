@@ -1,11 +1,13 @@
 .home.flower-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-
+	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+	// background-color: var(--text-dark);
 	.mask {
 		overflow: hidden;
 		aspect-ratio: 1 / 1;
 		position: relative;
+		border-radius: 8px;
+        margin: 2px;
 		.scaled {
 			position: absolute;
 			width: 520px;
@@ -14,9 +16,6 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			background-size: cover;
-			// img {
-			// 	width: 120%;
-			// }
 		}
 	}
 }

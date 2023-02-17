@@ -9,8 +9,8 @@ import AboutPage from "./aboutPage/AboutPage";
 function App() {
     return (
         <div className="App">
-            <AboutPage />
-            {/* <FlowerGrid /> */}
+            {/* <AboutPage /> */}
+            <FlowerGrid />
             {/* <div style={{ height: '20vh', width: '100vw' }}></div> */}
         </div>
     );
