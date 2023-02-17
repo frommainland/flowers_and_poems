@@ -2,6 +2,24 @@ import './Nav.scss'
 import { motion } from 'framer-motion'
 
 const Nav = ({ data }) => {
+	const aboutText = '关于网站'
+	const about = aboutText.split('')
+
+	const container = {
+		hidden: { opacity: 0 },
+		show: {
+			opacity: 1,
+			transition: {
+				staggerChildren: 0.5,
+			},
+		},
+	}
+
+	const item = {
+		hidden: { opacity: 0 },
+		show: { opacity: 1 },
+	}
+
 	return (
 		<div className="nav">
 			<motion.div className="logo" animate={{ opacity: data ? 0 : 1 }}>
@@ -26,7 +44,25 @@ const Nav = ({ data }) => {
 							/>
 						</svg>
 					</span>
-					关于网站
+					<motion.p
+						variants={container}
+						initial="hidden"
+						whileHover="show"
+					>
+						{about.map((item, index) => {
+							return (
+								<motion.span
+									key={index}
+									variants={item}
+									// whileHover={{ scale: 1.1 }}
+								>
+									{item}
+								</motion.span>
+							)
+						})}
+					</motion.p>
+
+					{/* 关于网站 */}
 				</p>
 			</div>
 		</div>
