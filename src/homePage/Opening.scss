@@ -8,13 +8,13 @@
 	position: relative;
 	.logo-wrap {
 		position: fixed;
-        z-index: 2;
+		z-index: 2;
 		p {
 			color: var(--text-dark);
 			font-family: var(--font);
 			letter-spacing: -0.1em;
 			margin-bottom: -0.15em;
-            line-height: 1.05;
+			line-height: 1.05;
 		}
 	}
 }

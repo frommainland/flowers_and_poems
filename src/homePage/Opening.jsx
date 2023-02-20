@@ -8,8 +8,15 @@ import {
 	useTransform,
 	useMotionTemplate,
 } from 'framer-motion'
+import { useAtom } from 'jotai'
+import { isHomeFooterInViewAtom } from '../App'
 
 const Opening = () => {
+	const [isHomeFooterInView, setIsHomeFooterInView] = useAtom(
+		isHomeFooterInViewAtom
+	)
+	// console.log(isHomeFooterInView)
+
 	const size = useWindowSize()
 	const { scrollY } = useScroll()
 
@@ -35,10 +42,11 @@ const Opening = () => {
 		show: {
 			opacity: 1,
 			transition: {
-				staggerChildren: 0.07,
-				ease: [0.4, 0, 0, 1],
-				duration: 2,
-				delayChildren: 1,
+				staggerChildren: 0.2,
+				ease: [0, 0.21, 0, 1],
+				// ease: [0.4, 0, 0, 1],
+				duration: 0.3,
+				// delayChildren: 1,
 			},
 		},
 	}
@@ -50,7 +58,7 @@ const Opening = () => {
 		},
 	}
 
-	const title1 = '花与诗画和人'
+	const title1 = '花与诗9画和人'
 	const title1Split = title1.split('')
 
 	return (
@@ -62,10 +70,12 @@ const Opening = () => {
 		>
 			<div className="logo-wrap">
 				<motion.p
-					style={{ fontSize: changeSizeTemplate }}
+					style={{
+						fontSize: changeSizeTemplate,
+					}}
 					variants={container}
 					initial="hidden"
-					animate="show"
+					animate={isHomeFooterInView ? 'hidden' : 'show'}
 				>
 					{title1Split.map((value, index) => {
 						return value !== '9' ? (
@@ -73,7 +83,7 @@ const Opening = () => {
 								{value}
 							</motion.span>
 						) : (
-							<br />
+							<br key={'break'} />
 						)
 					})}
 				</motion.p>
