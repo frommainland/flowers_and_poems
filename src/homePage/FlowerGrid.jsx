@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useLayoutEffect } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import useRaf from '@rooks/use-raf'
 import './FlowerGrid.scss'
+
 import flower1 from './flowerTest/1.jpg'
 import flower2 from './flowerTest/2.jpg'
 import flower3 from './flowerTest/3.jpg'
@@ -77,7 +78,7 @@ const Img = ({ src, mouseX, mouseY, test }) => {
 		baseWidth * 2,
 		baseWidth * 1.5,
 		baseWidth * 1.1,
-		baseWidth * .8,
+		baseWidth * 0.8,
 		baseWidth * 1.1,
 		baseWidth * 1.5,
 		baseWidth * 2,
@@ -107,7 +108,7 @@ const Img = ({ src, mouseX, mouseY, test }) => {
 					Math.pow(mouseYVal - imgCenterY, 2)
 			)
 			distance.set(distanceDelta)
-			console.log(`${test} is ${distance.current}`)
+			// console.log(`${test} is ${distance.current}`)
 			return
 		}
 		distance.set(beyondTheDistanceLimit)
@@ -122,7 +123,7 @@ const Img = ({ src, mouseX, mouseY, test }) => {
 					width: changeWidth,
 				}}
 			></motion.div>
-			<h1 style={{ position: 'absolute' }}>{test}</h1>
+			{/* <h1 style={{ position: 'absolute' }}>{test}</h1> */}
 		</div>
 	)
 }

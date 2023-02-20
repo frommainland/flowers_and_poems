@@ -1,0 +1,20 @@
+.homepage.opening {
+	background-color: white;
+	background: linear-gradient(180deg, var(--color-blue) 0%, #ffffff 100%);
+	border-radius: 8px;
+	position: relative;
+	padding-left: 2.5rem;
+	padding-top: 2rem;
+	position: relative;
+	.logo-wrap {
+		position: fixed;
+        z-index: 2;
+		p {
+			color: var(--text-dark);
+			font-family: var(--font);
+			letter-spacing: -0.1em;
+			margin-bottom: -0.15em;
+            line-height: 1.05;
+		}
+	}
+}

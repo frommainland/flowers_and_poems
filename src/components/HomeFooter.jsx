@@ -1,0 +1,56 @@
+import React, { useEffect, useRef } from 'react'
+import useWindowSize from '../helper/hooks/useWindowSize'
+import { motion, useInView } from 'framer-motion'
+import { useAtom } from 'jotai'
+import { isHomeFooterInViewAtom } from '../App'
+
+const MyLink = ({ href, text }) => {
+	return (
+		<motion.a href={href} whileHover={{ color: '#2F2F30' }}>
+			{text}
+		</motion.a>
+	)
+}
+
+const HomeFooter = ({ handleData }) => {
+	const size = useWindowSize()
+	const ref = useRef(null)
+	const isInView = useInView(ref, { margin: '-40%' })
+	const [isHomeFooterInView, setIsHomeFooterInView] = useAtom(
+		isHomeFooterInViewAtom
+	)
+
+	useEffect(() => {
+		setIsHomeFooterInView(isInView)
+	}, [isInView])
+
+	return (
+		<div
+			className="homefooter wrap"
+			style={{
+				minHeight: size.height,
+			}}
+			ref={ref}
+		>
+			<p style={{ fontSize: `calc(${size.width}*.45/3/4*5px)` }}>
+				花与诗
+			</p>
+			<p style={{ fontSize: `calc(${size.width}*.45/3/4*5px)` }}>
+				画和人
+			</p>
+
+			<div className="the-end">
+				<p>二零二三 ◉ 二月</p>
+				<p>
+					<MyLink
+						href="https://frommainland.netlify.app/"
+						text="所有项目存档↗"
+					/>
+				</p>
+				<p>{isHomeFooterInView ? 'inView true' : 'inView false'}</p>
+			</div>
+		</div>
+	)
+}
+
+export default HomeFooter
