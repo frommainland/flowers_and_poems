@@ -47,7 +47,6 @@ const HomeFooter = ({ handleData }) => {
 						text="所有项目存档↗"
 					/>
 				</p>
-				<p>{isHomeFooterInView ? 'inView true' : 'inView false'}</p>
 			</div>
 		</div>
 	)

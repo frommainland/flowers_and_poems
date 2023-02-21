@@ -1,22 +1,21 @@
 .about-us-button {
 	position: fixed;
 	z-index: 3;
+	font-weight: 600;
+	font-size: var(--step-6);
+	line-height: 138%;
+	text-align: right;
+	color: var(--text-dark);
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	gap: 12px;
 	div {
-		font-weight: 600;
-		font-size: var(--step-6);
-		line-height: 138%;
-		text-align: right;
-		color: var(--text-dark);
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-		div {
-			margin-right: 0.375em;
-			justify-content: center;
-			display: inline-flex;
-		}
-		.text {
-			margin-right: 0;
-		}
+		margin-right: 0.375em;
+		justify-content: center;
+		display: inline-flex;
+	}
+	.text {
+		margin-right: 0;
 	}
 }
