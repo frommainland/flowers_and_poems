@@ -35,8 +35,6 @@ export const AboutButton = () => {
 
 	const container = {
 		hidden: {
-			skewX: skwewDegBefore,
-			x: moveXBefore,
 			transition: {
 				staggerChildren: 0.07,
 				staggerDirection: -1,
@@ -45,32 +43,23 @@ export const AboutButton = () => {
 			},
 		},
 		show: {
-			skewX: skewDegAfter,
-			x: moveXAfter,
 			transition: {
 				staggerChildren: 0.07,
 				ease: [0.4, 0, 0, 1],
 				duration: 1,
-				staggerChildren: 1,
 			},
 		},
 	}
 
 	const items = {
-		hidden: (i) => ({
+		hidden: {
 			skewX: skwewDegBefore,
 			x: moveXBefore,
-			transition: {
-				delay: i * 0.07,
-			},
-		}),
-		show: (i) => ({
+		},
+		show: {
 			skewX: skewDegAfter,
 			x: moveXAfter,
-			transition: {
-				delay: i * 0.7,
-			},
-		}),
+		},
 	}
 
 	return (
@@ -94,27 +83,21 @@ export const AboutButton = () => {
 					/>
 				</svg>
 			</span>
-			<motion.p
-				// variants={container}
-				// initial="hidden"
-				// animate={hover ? 'show' : 'hidden'}
+			<motion.div
+				variants={container}
+				initial="hidden"
+				animate={hover ? 'show' : 'hidden'}
 				onHoverStart={() => setHover(true)}
 				onHoverEnd={() => setHover(false)}
 			>
 				{about.map((item, index) => {
 					return (
-						<motion.span
-							key={index}
-							custom={index}
-							variants={items}
-							animate={hover ? 'show' : 'hidden'}
-							className="text"
-						>
+						<motion.p key={index} variants={items} className="text">
 							{item}
-						</motion.span>
+						</motion.p>
 					)
 				})}
-			</motion.p>
+			</motion.div>
 		</motion.div>
 	)
 }
