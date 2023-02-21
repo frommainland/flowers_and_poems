@@ -1,13 +1,66 @@
 import React, { useState } from 'react'
 import Nav from './Nav'
 import './AboutPage.scss'
-import { motion } from 'framer-motion'
+import { motion, useAnimationControls } from 'framer-motion'
 import HomeFooter from './HomeFooter'
 
 const MyLink = ({ href, text }) => {
+	const controls = useAnimationControls()
+	const textSplit = text.split('')
+
+	const xBefore = 0
+	const skewBefore = 0
+	const xAfter = 3
+	const SkewAfter = -12
+	const container = {
+		hidden: {
+			transition: {
+				staggerChildren: 0.04,
+				staggerDirection: -1,
+				ease: [0.4, 0, 0, 1],
+				duration: 0.5,
+			},
+		},
+		show: {
+			transition: {
+				staggerChildren: 0.04,
+				ease: [0.4, 0, 0, 1],
+				duration: 0.5,
+			},
+		},
+	}
+	const content = {
+		hidden: {
+			x: xBefore,
+			skewX: skewBefore,
+		},
+		show: {
+			x: xAfter,
+			skewX: SkewAfter,
+		},
+	}
+
 	return (
-		<motion.a href={href} whileHover={{ color: '#2F2F30' }}>
-			{text}
+		<motion.a
+			href={href}
+			variants={container}
+			initial="hidden"
+			animate={controls}
+			onHoverStart={() => controls.start('show')}
+			onHoverEnd={() => controls.start('hidden')}
+		>
+			{textSplit.map((value, index) => {
+				return (
+					<motion.p
+						id="link-text"
+						key={index}
+						variants={content}
+						style={{ display: 'inline-block' }}
+					>
+						{value}
+					</motion.p>
+				)
+			})}
 		</motion.a>
 	)
 }
@@ -34,11 +87,12 @@ const AboutPage = () => {
 							网站共有16种花以及对应的古诗，是对以下网站的remix:&nbsp;
 							<MyLink
 								href="https://oddityfragrance.com/"
-								text="oddityfragrance↗"
+								text="oddity↗"
 							/>
+							&nbsp;
 							<MyLink
 								href="https://replica.studio/"
-								text="replica studio↗"
+								text="replica↗"
 							/>
 						</p>
 					</div>

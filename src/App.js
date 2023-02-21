@@ -13,8 +13,8 @@ export const isHomeFooterInViewAtom = atom(false)
 function App() {
     return (
         <div className="App">
-            < HomePage />
-            {/* <AboutPage /> */}
+            {/* < HomePage /> */}
+            <AboutPage />
         </div>
     );
 }

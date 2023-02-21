@@ -46,7 +46,7 @@ const Nav = ({ data }) => {
 			behavior: 'smooth',
 		})
 	}
-    
+
 	return (
 		<div className="nav">
 			<motion.div className="logo" animate={{ opacity: data ? 0 : 1 }}>
