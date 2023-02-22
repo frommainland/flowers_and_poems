@@ -19,3 +19,14 @@
 		}
 	}
 }
+
+#flowerGridName {
+	font-size: var(--step-6);
+	line-height: 1.1875;
+    font-family: 'Smiley Sans';
+	color: var(--text-dark);
+    writing-mode: vertical-rl;
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+}

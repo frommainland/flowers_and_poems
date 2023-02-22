@@ -5,6 +5,7 @@ import { useState, useEffect, useLayoutEffect } from 'react';
 import { Loader } from "./components/Loader";
 import { HomePage } from "./homePage/HomePage";
 import AboutPage from "./aboutPage/AboutPage";
+import FlowerDetails from "./flowerDetailPage/FlowerDetails";
 
 import { atom } from "jotai";
 export const isHomeFooterInViewAtom = atom(false)
@@ -20,8 +21,11 @@ function App() {
     return (
         <div className="App">
             {isFontLoaded ?
-                (
-                    <HomePage />
+                (<>
+                    {/* <HomePage /> */}
+                    <FlowerDetails />
+                </>
+
                 ) : (
                     <Loader />
                 )

@@ -35,7 +35,7 @@ const flowers = [
 	flower14,
 ]
 
-const Img = ({ src, mouseX, mouseY, test }) => {
+const Img = ({ src, mouseX, mouseY }) => {
 	const ref = useRef(null)
 	const [width, setWidth] = useState(0)
 	const [height, setHeight] = useState(0)
@@ -78,7 +78,7 @@ const Img = ({ src, mouseX, mouseY, test }) => {
 		baseWidth * 2,
 		baseWidth * 1.5,
 		baseWidth * 1.1,
-		baseWidth * 0.8,
+		baseWidth * 0.7,
 		baseWidth * 1.1,
 		baseWidth * 1.5,
 		baseWidth * 2,
@@ -114,6 +114,15 @@ const Img = ({ src, mouseX, mouseY, test }) => {
 		distance.set(beyondTheDistanceLimit)
 	}, true)
 
+	const [isHover, setIsHover] = useState(false)
+
+	const show = {
+		opacity: 1,
+	}
+	const hidden = {
+		opacity: 0,
+	}
+
 	return (
 		<div className="mask" ref={ref}>
 			<motion.div
@@ -122,8 +131,16 @@ const Img = ({ src, mouseX, mouseY, test }) => {
 					backgroundImage: `url(${src})`,
 					width: changeWidth,
 				}}
+				onMouseEnter={() => setIsHover(true)}
+				onMouseLeave={() => setIsHover(false)}
 			></motion.div>
-			{/* <h1 style={{ position: 'absolute' }}>{test}</h1> */}
+			<motion.p
+				id="flowerGridName"
+				initial={hidden}
+				animate={isHover ? show : hidden}
+			>
+				朱槿花
+			</motion.p>
 		</div>
 	)
 }

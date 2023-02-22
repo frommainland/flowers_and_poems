@@ -44,7 +44,7 @@ const HomeFooter = ({ handleData }) => {
 				<p>
 					<MyLink
 						href="https://frommainland.netlify.app/"
-						text="所有项目存档↗"
+						text="所有项目存档 ↗"
 					/>
 				</p>
 			</div>

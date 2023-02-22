@@ -1,0 +1,44 @@
+.bookcontent {
+	height: 100vh;
+	width: calc(50vw - 60px);
+	.bg-gradient {
+		position: absolute;
+		width: 120px;
+		height: 100%;
+		right: 0;
+		background: linear-gradient(
+			270deg,
+			rgba(255, 164, 164, 0.4) 0%,
+			rgba(255, 255, 255, 0) 100%
+		);
+	}
+	.poem {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: flex-end;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 60px;
+		p {
+			font-family: 'Smiley Sans';
+			writing-mode: vertical-rl;
+			font-weight: 400;
+			font-size: var(--step-5);
+			line-height: 1.38;
+			text-align: center;
+			color: var(--text-dark);
+			padding: 10px 8px 0px;
+			border-left: 1px solid var(--text-gray);
+			letter-spacing: 0.375em;
+		}
+		.author {
+			font-family: 'Smiley Sans';
+			font-weight: 400;
+			font-size: var(--step-0);
+			line-height: 1.22;
+			border-left: 0;
+            padding: 10px 16px 6px;
+		}
+	}
+}

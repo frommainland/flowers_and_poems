@@ -1,0 +1,39 @@
+.bookspine {
+	display: flex;
+	height: 100vh;
+	width: 60px;
+	position: relative;
+	justify-content: center;
+	.middle-line {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		border: 1px solid rgba(0, 0, 0, 0.25);
+		height: calc(100vh - 120px);
+		margin-top: 60px;
+		width: 1px;
+	}
+	.spine-content {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: 20px 0;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 20px;
+		text-align: center;
+		color: rgba(0, 0, 0, 0.5);
+		writing-mode: vertical-rl;
+		z-index: 2;
+		.cn-name {
+		}
+		.order {
+		}
+		.en-name {
+		}
+	}
+	.spine-content p {
+		padding: 20px;
+		background-color: white;
+	}
+}

@@ -87,12 +87,12 @@ const AboutPage = () => {
 							网站共有16种花以及对应的古诗，是对以下网站的remix:&nbsp;
 							<MyLink
 								href="https://oddityfragrance.com/"
-								text="oddity↗"
+								text="oddity ↗"
 							/>
 							&nbsp;
 							<MyLink
 								href="https://replica.studio/"
-								text="replica↗"
+								text="replica ↗"
 							/>
 						</p>
 					</div>
@@ -114,7 +114,7 @@ const AboutPage = () => {
 							Digitally enhanced by&nbsp;
 							<MyLink
 								href="https://www.rawpixel.com/"
-								text="rawpixel↗"
+								text="rawpixel ↗"
 							/>
 						</p>
 					</div>
@@ -131,7 +131,7 @@ const AboutPage = () => {
 								<p>
 									<MyLink
 										href="https://github.com/atelier-anchor/smiley-sans"
-										text="得意黑↗"
+										text="得意黑 ↗"
 									/>
 								</p>
 							</div>
@@ -143,7 +143,7 @@ const AboutPage = () => {
 								<p>
 									<MyLink
 										href="https://utopia.fyi/"
-										text="utopia↗"
+										text="utopia ↗"
 									/>
 								</p>
 							</div>
@@ -154,7 +154,7 @@ const AboutPage = () => {
 								<p>
 									<MyLink
 										href="https://github.com/frommainland/flowers_and_poems"
-										text="github↗"
+										text="github ↗"
 									/>
 								</p>
 							</div>
@@ -172,12 +172,12 @@ const AboutPage = () => {
 						<p>
 							<MyLink
 								href="https://github.com/frommainland/last_name_slang"
-								text="天王盖地虎，宝塔镇河妖↗"
+								text="天王盖地虎，宝塔镇河妖 ↗"
 							/>
 							<br />
 							<MyLink
 								href="https://github.com/frommainland/newJargon"
-								text="互联网词语学习↗"
+								text="互联网词语学习 ↗"
 							/>
 						</p>
 					</div>
