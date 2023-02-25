@@ -1,15 +1,20 @@
 import React from 'react'
 import './BookContent.scss'
 
-const BookContent = () => {
+const BookContent = ({ poem, author, gradient1, gradient2 }) => {
+	const poemSplit = poem.split('，')
 	return (
 		<div className="bookcontent">
-			<div className="bg-gradient"></div>
+			<div
+				className="bg-gradient"
+				style={{
+					background: `linear-gradient(270deg, ${gradient1} 0%, ${gradient2} 100%)`,
+				}}
+			></div>
 			<div className="poem">
-				<p>瘴烟长暖无霜雪</p>
-				<p>槿艳繁花满树红</p>
-				<p>每叹芳菲四时厌</p>
-				<p>不知开落有春风</p>
+				{poemSplit.map((v, i) => {
+					return <p key={i}>{v}</p>
+				})}
 				<p className="author">
 					<svg
 						width="100%"
@@ -25,7 +30,7 @@ const BookContent = () => {
 							fill="#2F2F30"
 						/>
 					</svg>
-					<span>李绅</span>
+					<span>{author}</span>
 				</p>
 			</div>
 			<div className="ratings">
@@ -33,7 +38,7 @@ const BookContent = () => {
 					<button className="control-page">←</button>
 					<button className="control-page">→</button>
 				</div>
-                <div></div>
+				<div></div>
 			</div>
 		</div>
 	)

@@ -1,12 +1,17 @@
 import React from 'react'
 import './BookCover.scss'
-// import flower1 from './flowerTest/1.jpg'
-import flower1 from '../homePage/flowerTest/1.jpg'
+import image from '../flowerImgs/1.webp'
+import placeHolderImage from '../flowerImgs/1tiny.jpg'
+import ProgressiveImg from '../components/ProgressiveImg'
 
-const BookCover = () => {
+const BookCover = ({ src, placeholderSrc, alt }) => {
 	return (
 		<div className="bookcover">
-			<img src={flower1} alt="花的名称 从props中取" />
+			<ProgressiveImg
+				src={src}
+				placeholderSrc={placeholderSrc}
+				alt={alt}
+			/>
 		</div>
 	)
 }

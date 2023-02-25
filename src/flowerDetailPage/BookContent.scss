@@ -1,6 +1,7 @@
 .bookcontent {
 	height: 100vh;
 	width: calc(50vw - 60px);
+	position: relative;
 	.bg-gradient {
 		position: absolute;
 		width: 8vw;
