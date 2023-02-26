@@ -1,7 +1,22 @@
 import React from 'react'
 import './BookContent.scss'
+import { FlowerData } from '../Data/FlowerData'
+import { useAtom } from 'jotai'
+import { pageAtom, directionAtom } from '../flowerDetailPage/FlowerDetails'
 
 const BookContent = ({ poem, author, gradient1, gradient2 }) => {
+	const [page, setPage] = useAtom(pageAtom)
+	const [direction, setDirection] = useAtom(directionAtom)
+
+	const handleToptClick = () => {
+		setPage(page === 0 ? FlowerData.length - 1 : page - 1)
+		setDirection(-1)
+	}
+	const handleDownClick = () => {
+		setPage(page === FlowerData.length - 1 ? 0 : page + 1)
+		setDirection(1)
+	}
+
 	const poemSplit = poem.split('，')
 	return (
 		<div className="bookcontent">
@@ -35,10 +50,13 @@ const BookContent = ({ poem, author, gradient1, gradient2 }) => {
 			</div>
 			<div className="ratings">
 				<div className="control-page-wrap">
-					<button className="control-page">←</button>
-					<button className="control-page">→</button>
+					<button className="control-page" onClick={handleToptClick}>
+						←
+					</button>
+					<button className="control-page" onClick={handleDownClick}>
+						→
+					</button>
 				</div>
-				<div></div>
 			</div>
 		</div>
 	)
