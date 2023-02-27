@@ -5,6 +5,7 @@ import BookContent from './BookContent'
 import { FlowerData } from '../Data/FlowerData'
 import { motion, AnimatePresence } from 'framer-motion'
 import easing, { smooth } from '../helper/easing'
+import useWindowSize from '../helper/hooks/useWindowSize'
 
 import { atom, useAtom } from 'jotai'
 export const pageAtom = atom(0)
@@ -14,22 +15,29 @@ const FlowerDetails = () => {
 	const [page] = useAtom(pageAtom)
 	const [direction] = useAtom(directionAtom)
 
+	const size = useWindowSize()
+
 	const divVariants = {
-		initial: { x: direction > 0 ? 1000 : -1000, opacity: 0, y: 600 },
-		show: { zIndex: 1, x: 0, opacity: 1, y: 0 },
-		exit: {
-			zIndex: 0,
-			x: direction < 0 ? 1000 : -1000,
-			opacity: 0,
-            y: 600
+		initial: { y: size.height, scale: 0.9, opacity: 0.75, zIndex: 0 },
+		show: {
+			zIndex: 1,
+			y: 0,
+			scale: 1,
+			opacity: 1,
+			transition: {
+				duration: 2,
+				delay: 2,
+				ease: smooth,
+			},
 		},
+		exit: { zIndex: 0, y: size.height, scale: 0.9, opacity: 0.75 },
 	}
 	return (
 		<motion.div
 			style={{
 				height: '100vh',
 				width: '100vw',
-				// overflow: 'hidden',
+				overflow: 'hidden',
 				position: 'relative',
 				backgroundColor: 'black',
 			}}
@@ -39,7 +47,8 @@ const FlowerDetails = () => {
 					style={{
 						display: 'flex',
 						overflow: 'hidden',
-						position: 'relative',
+						position: 'absolute',
+						y: 0,
 					}}
 					custom={direction}
 					key={page}
@@ -49,7 +58,7 @@ const FlowerDetails = () => {
 					exit="exit"
 					transition={{
 						ease: smooth,
-						duration: 1,
+						duration: 5,
 					}}
 				>
 					<BookCover
