@@ -51,14 +51,14 @@ const MyLink = ({ href, text }) => {
 		>
 			{textSplit.map((value, index) => {
 				return (
-					<motion.p
+					<motion.span
 						id="link-text"
 						key={index}
 						variants={content}
 						style={{ display: 'inline-block' }}
 					>
 						{value}
-					</motion.p>
+					</motion.span>
 				)
 			})}
 		</motion.a>

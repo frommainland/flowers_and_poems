@@ -3,8 +3,8 @@ import BookCover from './BookCover'
 import BookSpine from './BookSpine'
 import BookContent from './BookContent'
 import { FlowerData } from '../Data/FlowerData'
-import { motion, AnimatePresence } from 'framer-motion'
-import easing, { smooth } from '../helper/easing'
+import { motion, AnimatePresence, easeOut } from 'framer-motion'
+import { smooth } from '../helper/easing'
 import useWindowSize from '../helper/hooks/useWindowSize'
 
 import { atom, useAtom } from 'jotai'
@@ -19,7 +19,7 @@ const FlowerDetails = () => {
 
 	const divVariants = {
 		initial:
-			direction == 1
+			direction === 1
 				? {
 						y: size.height,
 						scale: 0.7,
@@ -29,12 +29,12 @@ const FlowerDetails = () => {
 				  }
 				: {
 						zIndex: 0,
-						opacity: 0,
+						opacity: 0.5,
 						scale: 0.95,
 						clipPath: 'inset(5% 5% 5% 5% round 4em)',
 				  },
 		show:
-			direction == 1
+			direction === 1
 				? {
 						opacity: 1,
 						zIndex: 1,
@@ -44,7 +44,7 @@ const FlowerDetails = () => {
 						transition: {
 							duration: 0.5,
 							delay: 0.1,
-							ease: smooth,
+							ease: easeOut,
 						},
 				  }
 				: {
@@ -55,12 +55,12 @@ const FlowerDetails = () => {
 						clipPath: 'inset(0% 0% 0% 0% round 0em)',
 						transition: {
 							duration: 0.5,
-							delay: 0.1,
+							delay: 0.3,
 							ease: smooth,
 						},
 				  },
 		exit:
-			direction == 1
+			direction === 1
 				? {
 						zIndex: 0,
 						opacity: 0.5,
@@ -69,10 +69,13 @@ const FlowerDetails = () => {
 				  }
 				: {
 						y: size.height,
-						scale: 0.7,
+						scale: 1,
 						zIndex: 1,
 						opacity: 1,
-						clipPath: 'inset(0% 5% 0% 5% round 20em)',
+						clipPath: 'inset(0% 5% 0% 5% round 4em)',
+						transition: {
+							duration: 0.5,
+						},
 				  },
 	}
 	return (

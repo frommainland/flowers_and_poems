@@ -11,8 +11,6 @@ import FlowerDetails from "./flowerDetailPage/FlowerDetails";
 import { atom } from "jotai";
 export const isHomeFooterInViewAtom = atom(false)
 
-
-
 function App() {
     const [isFontLoaded, setIsFontLoaded] = useState(false)
     useLayoutEffect(() => {
@@ -21,8 +19,6 @@ function App() {
         })
     }, [])
 
-
-
     return (
         <div className="App">
             {isFontLoaded ?
@@ -30,15 +26,6 @@ function App() {
                     <HomePage />
                     <AboutPage />
                     <FlowerDetails />
-                    <Routes>
-                        <Route path="/" element={<HomePage />}>
-                            <Route index element={<HomePage />} />
-                            <Route path="about" element={<AboutPage />} />
-                            <Route path="flower&poem" element={<FlowerDetails />} />
-                            <Route path="*" element={<Loader />} />
-                        </Route>
-                    </Routes>
-
                 </>
 
                 ) : (
