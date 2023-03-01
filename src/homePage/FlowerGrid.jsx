@@ -3,9 +3,11 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import useRaf from '@rooks/use-raf'
 import './FlowerGrid.scss'
 import { FlowerData } from '../Data/FlowerData'
+import { Link } from 'react-router-dom'
 
 const flowerImgWebp = FlowerData.map((v) => v.imgWebpSmall)
 const flowerName = FlowerData.map((v) => v.flowerNameCN)
+const flowerNameEN = FlowerData.map((v) => v.flowerNameEN)
 
 const Img = ({ src, mouseX, mouseY, index }) => {
 	const ref = useRef(null)
@@ -135,13 +137,20 @@ const FlowerGrid = () => {
 		>
 			{flowerImgWebp.map((item, index) => {
 				return (
-					<Img
-						src={item}
+					<Link
+						to={{
+							pathname: '/flower&poem',
+							search: `?name=${flowerNameEN[index]}`, // inject code value into template
+						}}
 						key={index}
-						index={index}
-						mouseX={mouseX}
-						mouseY={mouseY}
-					/>
+					>
+						<Img
+							src={item}
+							index={index}
+							mouseX={mouseX}
+							mouseY={mouseY}
+						/>
+					</Link>
 				)
 			})}
 		</div>

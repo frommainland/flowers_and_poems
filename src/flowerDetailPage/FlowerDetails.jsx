@@ -6,14 +6,32 @@ import { FlowerData } from '../Data/FlowerData'
 import { motion, AnimatePresence, easeOut } from 'framer-motion'
 import { smooth } from '../helper/easing'
 import useWindowSize from '../helper/hooks/useWindowSize'
+import { useEffect } from 'react'
+import { useSearchParams, useParams } from 'react-router-dom'
 
 import { atom, useAtom } from 'jotai'
 export const pageAtom = atom(0)
 export const directionAtom = atom(0)
 
-const FlowerDetails = () => {
-	const [page] = useAtom(pageAtom)
+const FlowerDetails = ({ match }) => {
+	const [searchParams] = useSearchParams()
+	const slug = searchParams.get('name')
+
+    
+	const [page, setPage] = useAtom(pageAtom)
 	const [direction] = useAtom(directionAtom)
+
+	const result = FlowerData.map((item, index) => {
+		if (item.flowerNameEN === slug) {
+			return index
+		}
+	})
+
+    // console.log(result.filter(Boolean));
+
+	useEffect(() => {
+		setPage(result.filter(Boolean))
+	}, [slug])
 
 	const size = useWindowSize()
 
