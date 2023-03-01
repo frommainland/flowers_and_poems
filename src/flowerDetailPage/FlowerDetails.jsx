@@ -1,4 +1,5 @@
 import React from 'react'
+import CloseButton from './CloseButton'
 import BookCover from './BookCover'
 import BookSpine from './BookSpine'
 import BookContent from './BookContent'
@@ -17,20 +18,24 @@ const FlowerDetails = ({ match }) => {
 	const [searchParams] = useSearchParams()
 	const slug = searchParams.get('name')
 
-    
 	const [page, setPage] = useAtom(pageAtom)
 	const [direction] = useAtom(directionAtom)
 
-	const result = FlowerData.map((item, index) => {
-		if (item.flowerNameEN === slug) {
-			return index
-		}
-	})
+	// const result = FlowerData.map((item, index) => {
+	// 	if (item.flowerNameEN === slug) {
+	// 		return index
+	// 	}
+	// })
 
-    // console.log(result.filter(Boolean));
+	// useEffect(() => {
+	// 	setPage(result.filter(Boolean))
+	// }, [slug])
+	const flowerNameENIndex = FlowerData.findIndex(
+		(x) => x.flowerNameEN === slug
+	)
 
 	useEffect(() => {
-		setPage(result.filter(Boolean))
+		setPage(flowerNameENIndex)
 	}, [slug])
 
 	const size = useWindowSize()
@@ -125,6 +130,7 @@ const FlowerDetails = ({ match }) => {
 						duration: 0.5,
 					}}
 				>
+					<CloseButton />
 					<BookCover
 						src={FlowerData[page].imgWebp}
 						placeholderSrc={FlowerData[page].imgTiny}

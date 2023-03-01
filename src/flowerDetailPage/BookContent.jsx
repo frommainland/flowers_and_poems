@@ -3,11 +3,13 @@ import './BookContent.scss'
 import { FlowerData } from '../Data/FlowerData'
 import { useAtom } from 'jotai'
 import { pageAtom, directionAtom } from '../flowerDetailPage/FlowerDetails'
+import { Link } from 'react-router-dom'
+
+const flowerNameEN = FlowerData.map((v) => v.flowerNameEN)
 
 const BookContent = ({ poem, author, gradient1, gradient2 }) => {
 	const [page, setPage] = useAtom(pageAtom)
 	const [direction, setDirection] = useAtom(directionAtom)
-
 	const handleToptClick = () => {
 		setPage(page === 0 ? FlowerData.length - 1 : page - 1)
 		setDirection(-1)
@@ -50,12 +52,32 @@ const BookContent = ({ poem, author, gradient1, gradient2 }) => {
 			</div>
 			<div className="ratings">
 				<div className="control-page-wrap">
-					<button className="control-page" onClick={handleToptClick}>
-						←
-					</button>
-					<button className="control-page" onClick={handleDownClick}>
-						→
-					</button>
+					<Link
+						to={{
+							pathname: '/flower&poem',
+							search: `?name=${flowerNameEN[page - 1]}`, // inject code value into template
+						}}
+					>
+						<button
+							className="control-page"
+							onClick={handleToptClick}
+						>
+							←
+						</button>
+					</Link>
+					<Link
+						to={{
+							pathname: '/flower&poem',
+							search: `?name=${flowerNameEN[page + 1]}`, // inject code value into template
+						}}
+					>
+						<button
+							className="control-page"
+							onClick={handleDownClick}
+						>
+							→
+						</button>
+					</Link>
 				</div>
 			</div>
 		</div>

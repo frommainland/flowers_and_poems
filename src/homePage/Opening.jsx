@@ -20,6 +20,7 @@ const Opening = () => {
 	const size = useWindowSize()
 	const { scrollY } = useScroll()
 
+    
 	const scrollInput = [0, size.height]
 	const sizeOutput = [
 		((((size.width + size.height) / 2) * 0.45) / 3 / 4) * 5,
