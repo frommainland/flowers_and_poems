@@ -27,9 +27,6 @@ function App() {
         <div className="App">
             {isFontLoaded ?
                 (<>
-                    <HomePage />
-                    <AboutPage />
-                    <FlowerDetails />
                     <Routes>
                         <Route path="/" element={<HomePage />}>
                             <Route index element={<HomePage />} />
@@ -40,7 +37,6 @@ function App() {
                     </Routes>
 
                 </>
-
                 ) : (
                     <Loader />
                 )

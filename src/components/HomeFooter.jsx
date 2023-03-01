@@ -32,15 +32,23 @@ const HomeFooter = ({ handleData }) => {
 			}}
 			ref={ref}
 		>
-			<p style={{ fontSize: `calc(${size.width}*.45/3/4*5px)` }}>
+			<p
+				style={{
+					fontSize: `calc((${size.width} + ${size.height})/2*.45/3/4*5px)`,
+				}}
+			>
 				花与诗
 			</p>
-			<p style={{ fontSize: `calc(${size.width}*.45/3/4*5px)` }}>
+			<p
+				style={{
+					fontSize: `calc((${size.width} + ${size.height})/2*.45/3/4*5px)`,
+				}}
+			>
 				画和人
 			</p>
 
 			<div className="the-end">
-				<p>二零二三 ◉ 二月</p>
+				<p> ☻ 二零二三二月</p>
 				<p>
 					<MyLink
 						href="https://frommainland.netlify.app/"

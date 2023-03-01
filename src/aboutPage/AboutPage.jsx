@@ -15,7 +15,7 @@ const MyLink = ({ href, text }) => {
 	const container = {
 		hidden: {
 			transition: {
-				staggerChildren: 0.04,
+				staggerChildren: 0.02,
 				staggerDirection: -1,
 				ease: [0.4, 0, 0, 1],
 				duration: 0.5,
@@ -23,7 +23,7 @@ const MyLink = ({ href, text }) => {
 		},
 		show: {
 			transition: {
-				staggerChildren: 0.04,
+				staggerChildren: 0.02,
 				ease: [0.4, 0, 0, 1],
 				duration: 0.5,
 			},

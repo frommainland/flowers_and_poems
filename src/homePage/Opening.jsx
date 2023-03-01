@@ -33,14 +33,12 @@ const Opening = () => {
 			stiffness: 250,
 		}
 	)
+
 	const changeSizeTemplate = useMotionTemplate`${changeSize}px`
 
 	const container = {
-		hidden: {
-			opacity: 0,
-		},
+		hidden: {},
 		show: {
-			opacity: 1,
 			transition: {
 				staggerChildren: 0.2,
 				ease: [0, 0.21, 0, 1],
