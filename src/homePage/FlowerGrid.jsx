@@ -2,40 +2,12 @@ import React, { useEffect, useRef, useState, useLayoutEffect } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import useRaf from '@rooks/use-raf'
 import './FlowerGrid.scss'
+import { FlowerData } from '../Data/FlowerData'
 
-import flower1 from './flowerTest/1.jpg'
-import flower2 from './flowerTest/2.jpg'
-import flower3 from './flowerTest/3.jpg'
-import flower4 from './flowerTest/4.jpg'
-import flower5 from './flowerTest/5.jpg'
-import flower6 from './flowerTest/6.jpg'
-import flower7 from './flowerTest/7.jpg'
-import flower8 from './flowerTest/8.jpg'
-import flower9 from './flowerTest/9.jpg'
-import flower10 from './flowerTest/10.jpg'
-import flower11 from './flowerTest/11.jpg'
-import flower12 from './flowerTest/12.jpg'
-import flower13 from './flowerTest/13.jpg'
-import flower14 from './flowerTest/14.jpg'
+const flowerImgWebp = FlowerData.map((v) => v.imgWebpSmall)
+const flowerName = FlowerData.map((v) => v.flowerNameCN)
 
-const flowers = [
-	flower1,
-	flower2,
-	flower3,
-	flower4,
-	flower5,
-	flower6,
-	flower7,
-	flower8,
-	flower9,
-	flower10,
-	flower11,
-	flower12,
-	flower13,
-	flower14,
-]
-
-const Img = ({ src, mouseX, mouseY }) => {
+const Img = ({ src, mouseX, mouseY, index }) => {
 	const ref = useRef(null)
 	const [width, setWidth] = useState(0)
 	const [height, setHeight] = useState(0)
@@ -139,7 +111,7 @@ const Img = ({ src, mouseX, mouseY }) => {
 				initial={hidden}
 				animate={isHover ? show : hidden}
 			>
-				朱槿花
+				{flowerName[index]}
 			</motion.p>
 		</div>
 	)
@@ -161,12 +133,12 @@ const FlowerGrid = () => {
 				mouseY.set(null)
 			}}
 		>
-			{flowers.map((item, index) => {
+			{flowerImgWebp.map((item, index) => {
 				return (
 					<Img
 						src={item}
 						key={index}
-						test={index}
+						index={index}
 						mouseX={mouseX}
 						mouseY={mouseY}
 					/>

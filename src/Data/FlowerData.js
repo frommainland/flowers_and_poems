@@ -9,6 +9,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/1.jpg",
         "imgWebp": "/flowerImgs/1.webp",
         "imgTiny": "/flowerImgs/1tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/1small.webp",
         "gradient1": "rgba(238, 37, 29, 0.4)",
         "gradient2": "rgba(238, 37, 29, 0)"
     },
@@ -22,6 +23,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/2.jpg",
         "imgWebp": "/flowerImgs/2.webp",
         "imgTiny": "/flowerImgs/2tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/2small.webp",
         "gradient1": "rgba(255, 19, 36, 0.4)",
         "gradient2": "rgba(255, 19, 36, 0)"
     },
@@ -35,6 +37,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/3.jpg",
         "imgWebp": "/flowerImgs/3.webp",
         "imgTiny": "flowerImgs/3tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/3small.webp",
         "gradient1": "rgba(208, 67, 220, 0.4)",
         "gradient2": "rgba(255, 210, 86, 0)"
     },
@@ -48,6 +51,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/4.jpg",
         "imgWebp": "/flowerImgs/4.webp",
         "imgTiny": "flowerImgs/4tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/4small.webp",
         "gradient1": "rgba(255, 0, 0, 0.4)",
         "gradient2": "rgba(255, 199, 0, 0)"
     },
@@ -61,6 +65,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/5.jpg",
         "imgWebp": "/flowerImgs/5.webp",
         "imgTiny": "/flowerImgs/5tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/5small.webp",
         "gradient1": "rgba(255, 61, 0, 0.4)",
         "gradient2": "rgba(255, 115, 22, 0)"
     },
@@ -74,6 +79,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/6.jpg",
         "imgWebp": "/flowerImgs/6.webp",
         "imgTiny": "/flowerImgs/6tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/6small.webp",
         "gradient1": "rgba(243, 181, 255, 0.4)",
         "gradient2": "rgba(0, 16, 255, 0)"
     },
@@ -87,6 +93,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/7.jpg",
         "imgWebp": "/flowerImgs/7.webp",
         "imgTiny": "flowerImgs/7tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/7small.webp",
         "gradient1": "rgba(255, 59, 48, 0.4)",
         "gradient2": "rgba(255, 217, 97, 0)"
     },
@@ -100,6 +107,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/8.jpg",
         "imgWebp": "/flowerImgs/8.webp",
         "imgTiny": "flowerImgs/8tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/8small.webp",
         "gradient1": "rgba(255, 0, 0, 0.4)",
         "gradient2": "rgba(255, 248, 0, 0)"
     },
@@ -113,6 +121,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/9.jpg",
         "imgWebp": "/flowerImgs/9.webp",
         "imgTiny": "flowerImgs/9tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/9small.webp",
         "gradient1": "rgba(255, 250, 140, 0.4)",
         "gradient2": "rgba(255, 255, 255, 0)"
     },
@@ -126,6 +135,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/10.jpg",
         "imgWebp": "/flowerImgs/10.webp",
         "imgTiny": "flowerImgs/10tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/10small.webp",
         "gradient1": "rgba(255, 0, 0, 0.4)",
         "gradient2": "rgba(216, 219, 83, 0)"
     },
@@ -139,6 +149,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/11.jpg",
         "imgWebp": "/flowerImgs/11.webp",
         "imgTiny": "/flowerImgs/11tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/11small.webp",
         "gradient1": "rgba(255, 164, 164, 0.4)",
         "gradient2": "rgba(255, 255, 255, 0)"
     },
@@ -152,6 +163,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/12.jpg",
         "imgWebp": "/flowerImgs/12.webp",
         "imgTiny": "/flowerImgs/12tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/12small.webp",
         "gradient1": "rgba(255, 52, 52, 0.4)",
         "gradient2": "rgba(210, 191, 61, 0)"
     },
@@ -165,6 +177,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/13.jpg",
         "imgWebp": "/flowerImgs/13.webp",
         "imgTiny": "flowerImgs/13tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/13small.webp",
         "gradient1": "rgba(196, 120, 255, 0.4)",
         "gradient2": "rgba(255, 255, 255, 0)"
     },
@@ -178,6 +191,7 @@ export const FlowerData = [
         "imageJpg": "/flowerImgs/14.jpg",
         "imgWebp": "/flowerImgs/14.webp",
         "imgTiny": "flowerImgs/14tiny.jpg",
+        "imgWebpSmall": "/flowerImgs/14small.webp",
         "gradient1": "rgba(255, 140, 188, 0.4)",
         "gradient2": "rgba(255, 255, 255, 0)"
     }

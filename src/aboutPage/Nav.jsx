@@ -1,6 +1,7 @@
 import './Nav.scss'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Nav = ({ data }) => {
 	const aboutText = '关于网站'
@@ -49,10 +50,15 @@ const Nav = ({ data }) => {
 
 	return (
 		<div className="nav">
-			<motion.div className="logo" animate={{ opacity: data ? 0 : 1 }}>
-				<p>花与诗</p>
-				<p>画和人</p>
-			</motion.div>
+			<Link to="/">
+				<motion.div
+					className="logo"
+					animate={{ opacity: data ? 0 : 1 }}
+				>
+					<p>花与诗</p>
+					<p>画和人</p>
+				</motion.div>
+			</Link>
 			<div className="about-us" onClick={scrollToTop}>
 				<div>
 					<span>

@@ -6,7 +6,7 @@
 		overflow: hidden;
 		aspect-ratio: 720 / 1024;
 		position: relative;
-		border-radius: 8px;
+		border-radius: 1em;
 		margin: 2px;
 		.scaled {
 			position: absolute;
@@ -23,10 +23,11 @@
 #flowerGridName {
 	font-size: var(--step-6);
 	line-height: 1.1875;
-    font-family: 'Smiley Sans';
+	letter-spacing: 0.875em;
+	font-family: 'Smiley Sans';
 	color: var(--text-dark);
-    writing-mode: vertical-rl;
-    position: absolute;
-    bottom: 1em;
-    left: 1em;
+	writing-mode: vertical-rl;
+	position: absolute;
+	bottom: 1em;
+	left: 1em;
 }

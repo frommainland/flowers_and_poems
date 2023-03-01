@@ -10,6 +10,8 @@ import { useState } from 'react'
 import useWindowSize from '../helper/hooks/useWindowSize'
 import './AboutButton.scss'
 
+import { Link } from 'react-router-dom'
+
 export const AboutButton = () => {
 	const size = useWindowSize()
 	const { scrollY } = useScroll()
@@ -83,21 +85,27 @@ export const AboutButton = () => {
 					/>
 				</svg>
 			</span>
-			<motion.div
-				variants={container}
-				initial="hidden"
-				animate={hover ? 'show' : 'hidden'}
-				onHoverStart={() => setHover(true)}
-				onHoverEnd={() => setHover(false)}
-			>
-				{about.map((item, index) => {
-					return (
-						<motion.p key={index} variants={items} className="text">
-							{item}
-						</motion.p>
-					)
-				})}
-			</motion.div>
+			<Link to="/about">
+				<motion.div
+					variants={container}
+					initial="hidden"
+					animate={hover ? 'show' : 'hidden'}
+					onHoverStart={() => setHover(true)}
+					onHoverEnd={() => setHover(false)}
+				>
+					{about.map((item, index) => {
+						return (
+							<motion.p
+								key={index}
+								variants={items}
+								className="text"
+							>
+								{item}
+							</motion.p>
+						)
+					})}
+				</motion.div>
+			</Link>
 		</motion.div>
 	)
 }
