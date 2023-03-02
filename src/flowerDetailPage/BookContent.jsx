@@ -4,6 +4,8 @@ import { FlowerData } from '../Data/FlowerData'
 import { useAtom } from 'jotai'
 import { pageAtom, directionAtom } from '../flowerDetailPage/FlowerDetails'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { smooth } from '../helper/easing'
 
 const flowerNameEN = FlowerData.map((v) => v.flowerNameEN)
 
@@ -50,36 +52,56 @@ const BookContent = ({ poem, author, gradient1, gradient2 }) => {
 					<span>{author}</span>
 				</p>
 			</div>
-			<div className="ratings">
-				<div className="control-page-wrap">
-					<Link
-						to={{
-							pathname: '/flower&poem',
-							search: `?name=${flowerNameEN[page - 1]}`, // inject code value into template
+
+			<Link
+				to={{
+					pathname: '/flower&poem',
+					search: `?name=${
+						flowerNameEN[
+							page === 0 ? FlowerData.length - 1 : page - 1
+						]
+					}`,
+				}}
+			>
+				<div className="button-wrap">
+					<motion.button
+						layout
+						onClick={handleToptClick}
+						whileHover={{
+							width: 90,
+							height: 90,
 						}}
 					>
-						<button
-							className="control-page"
-							onClick={handleToptClick}
-						>
-							←
-						</button>
-					</Link>
-					<Link
-						to={{
-							pathname: '/flower&poem',
-							search: `?name=${flowerNameEN[page + 1]}`, // inject code value into template
-						}}
-					>
-						<button
-							className="control-page"
-							onClick={handleDownClick}
-						>
-							→
-						</button>
-					</Link>
+						<motion.span layout>↑</motion.span>
+					</motion.button>
 				</div>
-			</div>
+			</Link>
+			<Link
+				to={{
+					pathname: '/flower&poem',
+					search: `?name=${
+						flowerNameEN[
+							page === FlowerData.length - 1 ? 0 : page + 1
+						]
+					}`,
+				}}
+			>
+				<div className="button-wrap buttonDown">
+					<motion.button
+						layout
+						onClick={handleDownClick}
+						whileHover={{
+							width: 90,
+							height: 90,
+							transition: {
+								ease: smooth,
+							},
+						}}
+					>
+						<motion.span layout>↓</motion.span>
+					</motion.button>
+				</div>
+			</Link>
 		</div>
 	)
 }
