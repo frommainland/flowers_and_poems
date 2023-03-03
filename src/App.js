@@ -37,16 +37,14 @@ function App() {
         <div className="App">
             {isFontLoaded ?
                 (<>
-                    <SmoothScroll>
-                        <Routes>
-                            <Route path="/" >
-                                <Route index element={<HomePage />} />
-                                <Route path="about" element={<AboutPage />} />
-                                <Route path="flower&poem" element={<FlowerDetails />} />
-                                <Route path="*" element={<Loader />} />
-                            </Route>
-                        </Routes>
-                    </SmoothScroll>
+                    <Routes>
+                        <Route path="/" >
+                            <Route index element={<HomePage />} />
+                            <Route path="about" element={<AboutPage />} />
+                            <Route path="flower&poem" element={<FlowerDetails />} />
+                            <Route path="*" element={<Loader />} />
+                        </Route>
+                    </Routes>
                 </>
                 ) : (
                     <Loader />

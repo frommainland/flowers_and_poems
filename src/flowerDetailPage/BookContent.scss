@@ -46,12 +46,12 @@
 			}
 		}
 	}
-
 	.button-wrap {
 		position: absolute;
-		bottom: 0;
-		left: 20vw;
-		margin-bottom: 40px;
+		bottom: 2.5rem;
+		left: 2.5rem;
+		height: 90px;
+		width: 90px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -62,15 +62,11 @@
 			font-style: normal;
 			font-weight: 700;
 			font-size: var(--step-1);
-			line-height: 24px;
 			color: var(--text-dark);
 			cursor: pointer;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		}
-	}
-	.button-wrap.buttonDown {
-		left: 6vw;
 	}
 }

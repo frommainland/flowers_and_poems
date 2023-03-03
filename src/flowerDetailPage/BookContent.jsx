@@ -52,30 +52,33 @@ const BookContent = ({ poem, author, gradient1, gradient2 }) => {
 					<span>{author}</span>
 				</p>
 			</div>
-
-			<Link
-				to={{
-					pathname: '/flower&poem',
-					search: `?name=${
-						flowerNameEN[
-							page === 0 ? FlowerData.length - 1 : page - 1
-						]
-					}`,
-				}}
-			>
-				<div className="button-wrap">
+			<motion.div className="button-wrap" style={{ left: '8rem' }}>
+				<Link
+					to={{
+						pathname: '/flower&poem',
+						search: `?name=${
+							flowerNameEN[
+								page === 0 ? FlowerData.length - 1 : page - 1
+							]
+						}`,
+					}}
+				>
 					<motion.button
 						layout
 						onClick={handleToptClick}
 						whileHover={{
 							width: 90,
 							height: 90,
+							transition: {
+								ease: smooth,
+							},
 						}}
+						whileTap={{ backgroundColor: '#BEBEBE', scale: 0.8 }}
 					>
 						<motion.span layout>↑</motion.span>
 					</motion.button>
-				</div>
-			</Link>
+				</Link>
+			</motion.div>
 			<Link
 				to={{
 					pathname: '/flower&poem',
@@ -86,7 +89,7 @@ const BookContent = ({ poem, author, gradient1, gradient2 }) => {
 					}`,
 				}}
 			>
-				<div className="button-wrap buttonDown">
+				<motion.div className="button-wrap">
 					<motion.button
 						layout
 						onClick={handleDownClick}
@@ -100,7 +103,7 @@ const BookContent = ({ poem, author, gradient1, gradient2 }) => {
 					>
 						<motion.span layout>↓</motion.span>
 					</motion.button>
-				</div>
+				</motion.div>
 			</Link>
 		</div>
 	)
