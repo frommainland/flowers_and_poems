@@ -52,7 +52,7 @@ const FlowerDetails = ({ match }) => {
 				  }
 				: {
 						zIndex: 0,
-						opacity: 0.5,
+						opacity: .35,
 						scale: 0.95,
 						clipPath: 'inset(5% 5% 5% 5% round 4em)',
 				  },
@@ -65,7 +65,7 @@ const FlowerDetails = ({ match }) => {
 						scale: 1,
 						clipPath: 'inset(0% 0% 0% 0% round 0em)',
 						transition: {
-							duration: 0.5,
+							duration: .35,
 							delay: 0.1,
 							ease: easeOut,
 						},
@@ -77,7 +77,7 @@ const FlowerDetails = ({ match }) => {
 						scale: 1,
 						clipPath: 'inset(0% 0% 0% 0% round 0em)',
 						transition: {
-							duration: 0.5,
+							duration: .35,
 							delay: 0.3,
 							ease: smooth,
 						},
@@ -86,7 +86,7 @@ const FlowerDetails = ({ match }) => {
 			direction === 1
 				? {
 						zIndex: 0,
-						opacity: 0.5,
+						opacity: .35,
 						scale: 0.95,
 						clipPath: 'inset(5% 5% 5% 5% round 4em)',
 				  }
@@ -97,7 +97,7 @@ const FlowerDetails = ({ match }) => {
 						opacity: 1,
 						clipPath: 'inset(0% 5% 0% 5% round 4em)',
 						transition: {
-							duration: 0.5,
+							duration: .35,
 						},
 				  },
 	}
@@ -127,7 +127,7 @@ const FlowerDetails = ({ match }) => {
 					exit="exit"
 					transition={{
 						ease: smooth,
-						duration: 0.5,
+						duration: .35,
 					}}
 				>
 					<CloseButton />

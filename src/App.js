@@ -25,6 +25,7 @@ function App() {
         setIsFontLoaded(true);
     });
 
+
     // useLayoutEffect(() => {
     //     document.fonts.ready.then(() => {
     //         setIsFontLoaded(true)
@@ -38,7 +39,7 @@ function App() {
             {isFontLoaded ?
                 (<>
                     <Routes>
-                        <Route path="/" >
+                        <Route path="/">
                             <Route index element={<HomePage />} />
                             <Route path="about" element={<AboutPage />} />
                             <Route path="flower&poem" element={<FlowerDetails />} />

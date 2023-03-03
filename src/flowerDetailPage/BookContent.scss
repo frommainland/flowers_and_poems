@@ -48,10 +48,10 @@
 	}
 	.button-wrap {
 		position: absolute;
-		bottom: 2.5rem;
-		left: 2.5rem;
-		height: 90px;
-		width: 90px;
+		bottom: 3.5rem;
+		// left: 2.5rem;
+		height: 60px;
+		width: 60px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -64,9 +64,27 @@
 			font-size: var(--step-1);
 			color: var(--text-dark);
 			cursor: pointer;
+			width: 60px;
+			height: 60px;
+			overflow: hidden;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			position: relative;
+			div {
+				height: auto;
+				width: auto;
+				position: absolute;
+				top: 0;
+				p {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 60px;
+					height: 60px;
+                    margin-bottom: 15px;
+				}
+			}
 		}
 	}
 }

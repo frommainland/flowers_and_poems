@@ -1,12 +1,43 @@
 /* Frame 68 */
 .flower-close-button {
-	padding: 19px;
 	position: absolute;
-	width: 52px;
-	height: 52px;
 	left: 2.875em;
 	top: 2.875em;
-	background: #eaeaea;
-	border-radius: 100px;
-	z-index: 3;
+	height: 60px;
+	width: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    z-index: 3;
+	button {
+		padding: 1em 1.125em;
+		background: #eaeaea;
+		border-radius: 100px;
+		font-style: normal;
+		font-weight: 700;
+		font-size: var(--step-1);
+		color: var(--text-dark);
+		cursor: pointer;
+		width: 60px;
+		height: 60px;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		div {
+			height: auto;
+			width: auto;
+			position: absolute;
+			top: 0;
+			p {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 60px;
+				height: 60px;
+				margin-bottom: 15px;
+			}
+		}
+	}
 }
