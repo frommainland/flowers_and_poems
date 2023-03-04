@@ -4,7 +4,6 @@ import useRaf from '@rooks/use-raf'
 import './FlowerGrid.scss'
 import { FlowerData } from '../Data/FlowerData'
 import { Link } from 'react-router-dom'
-import { smooth, smoothReverse } from '../helper/easing'
 
 const flowerImgWebp = FlowerData.map((v) => v.imgWebpSmall)
 const flowerName = FlowerData.map((v) => v.flowerNameCN)
@@ -91,23 +90,12 @@ const Img = ({ src, mouseX, mouseY, index }) => {
 
 	const [isHover, setIsHover] = useState(false)
 
-	const flowerNameVariant = {
-		show: {
-			opacity: 1,
-			y: 0,
-		},
-		hidden: (custom) => ({
-			opacity: 0,
-			y: 120,
-			transition: {
-				ease: smoothReverse,
-				duration: 0.4,
-				delay: Math.abs(custom - 2) * 0.075,
-			},
-		}),
+	const show = {
+		opacity: 1,
 	}
-
-	const flowerNameSplits = flowerName[index].split('')
+	const hidden = {
+		opacity: 0,
+	}
 
 	return (
 		<div className="mask" ref={ref}>
@@ -120,28 +108,13 @@ const Img = ({ src, mouseX, mouseY, index }) => {
 				onMouseEnter={() => setIsHover(true)}
 				onMouseLeave={() => setIsHover(false)}
 			></motion.div>
-			<motion.div id="flowerGridName">
-				{flowerNameSplits.map((item, index) => {
-					return (
-						<motion.div className="flower-show-name-mask">
-							<motion.p
-								key={index}
-								custom={index}
-								variants={flowerNameVariant}
-								initial="hidden"
-								animate={isHover ? 'show' : 'hidden'}
-								transition={{
-									ease: smooth,
-									duration: 0.8,
-									delay: index * 0.1,
-								}}
-							>
-								{item}
-							</motion.p>
-						</motion.div>
-					)
-				})}
-			</motion.div>
+			<motion.p
+				id="flowerGridName"
+				initial={hidden}
+				animate={isHover ? show : hidden}
+			>
+				{flowerName[index]}
+			</motion.p>
 		</div>
 	)
 }
@@ -169,11 +142,10 @@ const FlowerGrid = () => {
 							pathname: '/flower&poem',
 							search: `?name=${flowerNameEN[index]}`, // inject code value into template
 						}}
-						key={item}
+						key={index}
 					>
 						<Img
 							src={item}
-							key={item}
 							index={index}
 							mouseX={mouseX}
 							mouseY={mouseY}

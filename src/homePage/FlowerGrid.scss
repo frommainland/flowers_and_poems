@@ -26,8 +26,14 @@
 	letter-spacing: 0.875em;
 	font-family: 'Smiley Sans';
 	color: var(--text-dark);
-	writing-mode: vertical-rl;
+	// writing-mode: vertical-rl;
 	position: absolute;
 	bottom: 1em;
 	left: 1em;
+
+	.flower-show-name-mask {
+		overflow: hidden;
+		display: block;
+        margin-bottom: 10px;
+	}
 }
