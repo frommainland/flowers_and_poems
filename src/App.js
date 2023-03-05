@@ -8,6 +8,7 @@ import { HomePage } from "./homePage/HomePage";
 import AboutPage from "./aboutPage/AboutPage";
 import FlowerDetails from "./flowerDetailPage/FlowerDetails";
 import SmoothScroll from "./components/SmoothScroll";
+import PageNotFound from "./404Page/PageNotFound";
 
 import { atom } from "jotai";
 import FontFaceObserver from "fontfaceobserver";
@@ -43,7 +44,7 @@ function App() {
                             <Route index element={<HomePage />} />
                             <Route path="about" element={<AboutPage />} />
                             <Route path="flower&poem" element={<FlowerDetails />} />
-                            <Route path="*" element={<Loader />} />
+                            <Route path="*" element={<PageNotFound />} />
                         </Route>
                     </Routes>
                 </>

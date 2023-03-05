@@ -123,9 +123,11 @@ const Img = ({ src, mouseX, mouseY, index }) => {
 			<motion.div id="flowerGridName">
 				{flowerNameSplits.map((item, index) => {
 					return (
-						<motion.div className="flower-show-name-mask">
+						<motion.div
+							className="flower-show-name-mask"
+							key={index}
+						>
 							<motion.p
-								key={index}
 								custom={index}
 								variants={flowerNameVariant}
 								initial="hidden"
