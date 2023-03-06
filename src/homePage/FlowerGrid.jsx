@@ -1,5 +1,11 @@
 import React, { useEffect, useRef, useState, useLayoutEffect } from 'react'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import {
+	AnimatePresence,
+	motion,
+	useMotionValue,
+	useSpring,
+	useTransform,
+} from 'framer-motion'
 import useRaf from '@rooks/use-raf'
 import './FlowerGrid.scss'
 import { FlowerData } from '../Data/FlowerData'
@@ -110,7 +116,7 @@ const Img = ({ src, mouseX, mouseY, index }) => {
 	const flowerNameSplits = flowerName[index].split('')
 
 	return (
-		<div className="mask" ref={ref}>
+		<motion.div className="mask" ref={ref}>
 			<motion.div
 				className="scaled"
 				style={{
@@ -144,7 +150,7 @@ const Img = ({ src, mouseX, mouseY, index }) => {
 					)
 				})}
 			</motion.div>
-		</div>
+		</motion.div>
 	)
 }
 

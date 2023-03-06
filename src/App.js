@@ -1,18 +1,21 @@
+import React from "react";
 import "the-new-css-reset/css/reset.css"
 import './rootCSS.scss'
 import './font.css'
 import { useState, useEffect, useLayoutEffect } from 'react';
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, useLocation, useOutlet } from "react-router-dom";
 import { Loader } from "./components/Loader";
 import { HomePage } from "./homePage/HomePage";
 import AboutPage from "./aboutPage/AboutPage";
 import FlowerDetails from "./flowerDetailPage/FlowerDetails";
 import SmoothScroll from "./components/SmoothScroll";
 import PageNotFound from "./404Page/PageNotFound";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { atom } from "jotai";
 import FontFaceObserver from "fontfaceobserver";
 export const isHomeFooterInViewAtom = atom(false)
+
 
 
 function App() {
@@ -37,17 +40,19 @@ function App() {
 
     return (
         <div className="App">
+
             {isFontLoaded ?
-                (<>
-                    <Routes>
-                        <Route path="/">
-                            <Route index element={<HomePage />} />
-                            <Route path="about" element={<AboutPage />} />
-                            <Route path="flower&poem" element={<FlowerDetails />} />
-                            <Route path="*" element={<PageNotFound />} />
-                        </Route>
-                    </Routes>
-                </>
+                (
+                    <>
+                        <Routes>
+                            <Route path="/">
+                                <Route index element={<HomePage />} />
+                                <Route path="about" element={<AboutPage />} />
+                                <Route path="flower&poem" element={<FlowerDetails />} />
+                                <Route path="*" element={<PageNotFound />} />
+                            </Route>
+                        </Routes>
+                    </>
                 ) : (
                     <Loader />
                 )

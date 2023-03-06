@@ -4,11 +4,11 @@ import BookCover from './BookCover'
 import BookSpine from './BookSpine'
 import BookContent from './BookContent'
 import { FlowerData } from '../Data/FlowerData'
-import { motion, AnimatePresence, easeOut } from 'framer-motion'
-import { smooth } from '../helper/easing'
+import { motion, AnimatePresence } from 'framer-motion'
+import { smooth, smoothReverse } from '../helper/easing'
 import useWindowSize from '../helper/hooks/useWindowSize'
 import { useEffect } from 'react'
-import { useSearchParams, useParams } from 'react-router-dom'
+import { useSearchParams, useParams, useLocation } from 'react-router-dom'
 
 import { atom, useAtom } from 'jotai'
 export const pageAtom = atom(0)
@@ -52,7 +52,7 @@ const FlowerDetails = ({ match }) => {
 				  }
 				: {
 						zIndex: 0,
-						opacity: .35,
+						opacity: 0.35,
 						scale: 0.95,
 						clipPath: 'inset(5% 5% 5% 5% round 4em)',
 				  },
@@ -65,9 +65,9 @@ const FlowerDetails = ({ match }) => {
 						scale: 1,
 						clipPath: 'inset(0% 0% 0% 0% round 0em)',
 						transition: {
-							duration: .35,
+							duration: 0.35,
 							delay: 0.1,
-							ease: easeOut,
+							ease: smoothReverse,
 						},
 				  }
 				: {
@@ -77,7 +77,7 @@ const FlowerDetails = ({ match }) => {
 						scale: 1,
 						clipPath: 'inset(0% 0% 0% 0% round 0em)',
 						transition: {
-							duration: .35,
+							duration: 0.35,
 							delay: 0.3,
 							ease: smooth,
 						},
@@ -86,7 +86,7 @@ const FlowerDetails = ({ match }) => {
 			direction === 1
 				? {
 						zIndex: 0,
-						opacity: .35,
+						opacity: 0.35,
 						scale: 0.95,
 						clipPath: 'inset(5% 5% 5% 5% round 4em)',
 				  }
@@ -97,7 +97,7 @@ const FlowerDetails = ({ match }) => {
 						opacity: 1,
 						clipPath: 'inset(0% 5% 0% 5% round 4em)',
 						transition: {
-							duration: .35,
+							duration: 0.35,
 						},
 				  },
 	}
@@ -127,7 +127,7 @@ const FlowerDetails = ({ match }) => {
 					exit="exit"
 					transition={{
 						ease: smooth,
-						duration: .35,
+						duration: 0.35,
 					}}
 				>
 					<CloseButton />
