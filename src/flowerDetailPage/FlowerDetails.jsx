@@ -4,7 +4,7 @@ import BookCover from './BookCover'
 import BookSpine from './BookSpine'
 import BookContent from './BookContent'
 import { FlowerData } from '../Data/FlowerData'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, easeOut } from 'framer-motion'
 import { smooth, smoothReverse } from '../helper/easing'
 import useWindowSize from '../helper/hooks/useWindowSize'
 import { useEffect } from 'react'
@@ -65,9 +65,9 @@ const FlowerDetails = ({ match }) => {
 						scale: 1,
 						clipPath: 'inset(0% 0% 0% 0% round 0em)',
 						transition: {
-							duration: 0.35,
+							duration: 0.65,
 							delay: 0.1,
-							ease: smoothReverse,
+							ease: easeOut,
 						},
 				  }
 				: {
@@ -77,7 +77,7 @@ const FlowerDetails = ({ match }) => {
 						scale: 1,
 						clipPath: 'inset(0% 0% 0% 0% round 0em)',
 						transition: {
-							duration: 0.35,
+							duration: 0.65,
 							delay: 0.3,
 							ease: smooth,
 						},
@@ -97,7 +97,7 @@ const FlowerDetails = ({ match }) => {
 						opacity: 1,
 						clipPath: 'inset(0% 5% 0% 5% round 4em)',
 						transition: {
-							duration: 0.35,
+							duration: 0.55,
 						},
 				  },
 	}
@@ -127,7 +127,7 @@ const FlowerDetails = ({ match }) => {
 					exit="exit"
 					transition={{
 						ease: smooth,
-						duration: 0.35,
+						duration: 0.55,
 					}}
 				>
 					<CloseButton />
